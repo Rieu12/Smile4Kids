@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You - Smile4Kids</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      background: url('images/thankyou-bg.jpg') no-repeat center center fixed; /* ✅ Replace with your image */
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      width: 100%;
+      background: rgba(0, 115, 230, 0.9);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    header h2.logo {
+      font-size: 1.8rem;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    .thank-you-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 80px; /* to avoid header overlap */
+      padding-bottom: 60px; /* to avoid footer overlap */
+    }
+
+    .thank-you-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.8s ease;
+    }
+
+    .thank-you-container h1 {
+      color: #0073e6;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .thank-you-container p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .thank-you-container a {
+      padding: 14px 28px;
+      background: #0073e6;
+      color: #fff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .thank-you-container a:hover {
+      background: #005bb5;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      width: 100%;
+      background: rgba(0, 115, 230, 0.9);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-container h1 {
+        font-size: 2rem;
+      }
+      .thank-you-container p {
+        font-size: 1rem;
+      }
+      .thank-you-container a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h2 class="logo">Smile4Kids</h2>
+    <nav>
+      <a href="index.php">Home</a>
+      <a href="about_us.html">About Us</a>
+      <a href="contact_us.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Thank You Section -->
+  <div class="thank-you-section">
+    <div class="thank-you-container">
+      <h1>Thank You!</h1>
+      <p>Your submission has been received successfully. Our team will review your details and reach out if necessary.</p>
+      <a href="dashboard.php">Return to Dashboard</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Smile4Kids. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

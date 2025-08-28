@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f9fc;
+    color: #333;
+    line-height: 1.8;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  header {
+    background: #0073e6;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffd166;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .about .container {
+    max-width: 2000px;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .about .container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .about h1 {
+    color: #0073e6;
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about h2 {
+    color: #0073e6;
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about p {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  .about ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .about ul li {
+    font-size: 1.5rem;
+    background: #f8f8f8;
+    margin: 8px auto;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .about ul li:hover {
+    background: #e3f2fd;
+    transform: scale(1.03);
+  }
+
+  footer {
+    background: #0073e6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .about .container {
+      padding: 2rem;
+    }
+    .about h1 {
+      font-size: 2.2rem;
+    }
+    .about p, .about ul li {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Smile4Kids</title>
+  
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <h2 class="logo">Smile4Kids</h2>
+      <nav>
+        <a href="index.php">Home</a>
+        <a href="about_us.html">About Us</a>
+        <a href="contact_us.html">Contact</a>
+        <a href="register.php">Sign Up</a>
+        <a href="login.php">Log In</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <h1>About Us</h1>
+      <p>
+        Smile4Kids is a charitable organization dedicated to supporting underprivileged children through education, healthcare, and welfare initiatives. 
+        Our web-based platform ensures transparent and efficient management of donations, scholarships, and child welfare records.
+      </p>
+
+      <h2>Our Vision</h2>
+      <p>
+        To create a world where every child, regardless of background, has access to basic needs, quality education, and a safe, nurturing environment. 
+        We envision empowered children who grow into capable, compassionate adults ready to lead meaningful lives and give back to their communities.
+      </p>
+
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to:
+        <ul>
+          <li>Provide a secure and transparent platform for managing charitable donations.</li>
+          <li>Facilitate scholarship opportunities for children in need.</li>
+          <li>Ensure accurate and secure tracking of child welfare information.</li>
+          <li>Empower children through educational and emotional support.</li>
+          <li>Build long-term partnerships with donors/ sponsors, and the community to sustain our initiatives.</li>
+        </ul>
+      </p>
+
+      <h2>What We Do</h2>
+      <p>
+        Through Smile4Kids, donors can make donation, share scholarships opportunities, and maintain digital records of children’s welfare data. 
+        Administrators have access to robust tools for managing donations, generating reports, and improving accountability across the board.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Smile4Kids. All rights reserved.</p>
+  </footer>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const aboutContainer = document.querySelector(".about .container");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(aboutContainer);
+  });
+</script>
+</html>
